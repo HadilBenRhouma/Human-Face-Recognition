@@ -5,6 +5,8 @@ Small computer-vision project (ENIS, 2023): detects human faces live from the we
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white)
 
+<p align="center"><img src="docs/demo.jpg" alt="A face detected and framed in green by the Haar cascade" width="360"></p>
+
 ## How it works
 
 1. Each webcam frame is converted to grayscale.
@@ -18,7 +20,7 @@ each stage quickly rejects regions that are clearly not a face, which makes it f
 ## Run it
 
 ```bash
-pip install opencv-python
+pip install "opencv-python<5"   # CascadeClassifier is no longer in the OpenCV 5 main package
 python face_detection.py      # press "q" to quit
 ```
 
