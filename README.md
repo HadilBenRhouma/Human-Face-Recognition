@@ -1,25 +1,29 @@
-README FILE:
-In this beginner’s project, we will learn how to implement real-time human face recognition.
-We will build this project in Python using OpenCV.
-We will study the Haar Cascade Classifier algorithms in OpenCV. 
-Haar Cascade Classifier is a popular algorithm for object detection.
+# Real-Time Face Detection with OpenCV 🙂
 
-Face Recognition is a technology in computer vision. In Face recognition / detection we locate and visualize the human faces in any digital image.
-It is a subdomain of Object Detection, where we try to observe the instance of semantic objects. These objects are of particular class such as animals, cars, humans, etc. Face Detection technology has importance in many fields like marketing and security.
+Small computer-vision project (ENIS, 2023): detects human faces live from the webcam and draws a box around each one, using OpenCV's pre-trained Haar cascade classifier.
 
-Cascade Classifiers and Haar Features:
-Cascade Classifiers and Haar Features are the methods used for Object Detection.
-It is a machine learning algorithm where we train a cascade function with tons of images. These images are in two categories: positive images containing the target object and negative images not containing the target object.
-There are different types of cascade classifiers according to different target objects. In our project, we will use a classifier that considers the human face to recognize it as the target object.
-Haar Feature selection technique has a target to extract human face features. Haar features are like convolution kernels. These features are different permutations of black and white rectangles. In each feature calculation, we find the sum of pixels under white and black rectangles.
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white)
 
-Haar-cascade Detection in OpenCV:
-OpenCV provides pre-trained models on Haar features and Cascade classifiers. These models are located in OpenCV installation.
+## How it works
 
+1. Each webcam frame is converted to grayscale.
+2. The **Haar cascade** `haarcascade_frontalface_default.xml` (shipped with OpenCV) scans the frame at several scales
+   (`scaleFactor=1.1`, `minNeighbors=5`, faces of at least 30 × 30 px).
+3. A green rectangle is drawn around every detected face and the frame is displayed.
 
-Steps to implement human face recognition with Python & OpenCV:
-1. Imports
-2. Initialize the classifier
-3. Apply faceCascade on webcam frames
-4. Release the capture frames
-5. Run the project file using
+A Haar cascade is a chain of simple classifiers trained on thousands of positive (face) and negative images;
+each stage quickly rejects regions that are clearly not a face, which makes it fast enough for real-time video.
+
+## Run it
+
+```bash
+pip install opencv-python
+python face_detection.py      # press "q" to quit
+```
+
+The same code is available as a notebook: `Human_face_detection.ipynb`.
+
+## Author
+
+**Hadil Ben Rhouma** — [Portfolio](https://portfilio-gules-three.vercel.app/?utm_source=github) · [LinkedIn](https://www.linkedin.com/in/hadil-benrhouma/)
